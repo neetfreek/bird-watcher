@@ -8,13 +8,38 @@
     <StackLayout>
         <!-- Place new controls here -->
         <Label Text="Welcome to Bird Watcher!" 
-           HorizontalOptions="Center"
-           VerticalOptions="StartAndExpand"/>
+               BackgroundColor="Blue"
+               FontSize="26"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Start"               
+               />
 
-        <Button Text="Add Observation"
-            HorizontalOptions="Center"
-            VerticalOptions="EndAndExpand"
-            Clicked="OnButtonClicked"/>
+        <Label Text="Observation List" 
+               BackgroundColor="Red"
+               FontSize="22"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Start"/>
+        
+        <Label Text="Entry 1" 
+               FontSize="Large"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Start"/>
+
+        <Label Text="Entry 2" 
+               FontSize="Large"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Start"/>
+
+        <Label Text="Entry 3" 
+               FontSize="Large"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="Start"/>
+
+            <Button Text="Add Observation"
+			Grid.Row="0" Grid.Column="0"
+			HorizontalOptions="Fill"
+			VerticalOptions="EndAndExpand"
+			Clicked="OnButtonNewObservationClicked"/>
     </StackLayout>
-
+	
 </ContentPage>

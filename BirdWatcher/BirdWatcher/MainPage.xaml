@@ -11,44 +11,51 @@
                FontSize="26"
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="Start"               
-               />
+        />
 
         <Label Text="Observation List" 
                FontSize="22"
                HorizontalOptions="CenterAndExpand"
-               VerticalOptions="Start"/>
-
+               VerticalOptions="Start"
+        />
+        
         <!--Mockup of list of observations-->
         <Label Text="Entry 1" 
                FontSize="Large"
                HorizontalOptions="CenterAndExpand"
-               VerticalOptions="Start"/>
+               VerticalOptions="Start"
+        />
 
         <Label Text="Entry 2" 
                FontSize="Large"
                HorizontalOptions="CenterAndExpand"
-               VerticalOptions="Start"/>
+               VerticalOptions="Start"
+        />
 
         <Label Text="Entry 3" 
                FontSize="Large"
                HorizontalOptions="CenterAndExpand"
-               VerticalOptions="Start"/>
+               VerticalOptions="Start"
+        />
 
         <Label Text="Entry 4" 
                FontSize="Large"
                HorizontalOptions="CenterAndExpand"
-               VerticalOptions="Start"/>
+               VerticalOptions="Start"
+        />
 
         <Label Text="Entry 5" 
                FontSize="Large"
                HorizontalOptions="CenterAndExpand"
-               VerticalOptions="Start"/>
+               VerticalOptions="Start"
+        />
 
         <Button Text="Add Observation"
 			Grid.Row="0" Grid.Column="0"
 			HorizontalOptions="Fill"
 			VerticalOptions="EndAndExpand"
-			Clicked="OnButtonNewObservationClicked"/>
+			Clicked="OnButtonNewObservationClicked"
+        />
     </StackLayout>
 	
 </ContentPage>

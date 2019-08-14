@@ -13,8 +13,8 @@ namespace BirdWatcher
         {
             InitializeComponent();
         }
-
-        // Methods called by button clicks from MainPage
+        
+        // Methods called by button clicks from MainPage view
         async void OnButtonNewObservationClicked(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new NewObservationPage());

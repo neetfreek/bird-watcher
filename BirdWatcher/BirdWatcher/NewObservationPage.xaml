@@ -4,9 +4,82 @@
              x:Class="BirdWatcher.NewObservationPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Get ready to add some interesting bird info!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Add Observation Information"
+                   FontSize="22"
+                   VerticalOptions="StartAndExpand" 
+                   HorizontalOptions="CenterAndExpand" />
+            
+            <!--Input name-->
+            <Label Text="Enter name of species"
+                   FontSize="22"
+                   VerticalOptions="EndAndExpand" 
+                   HorizontalOptions="StartAndExpand" />
+            <Editor x:Name="Species"
+                    Placeholder="Species"
+                    VerticalOptions="StartAndExpand" 
+                    HorizontalOptions="StartAndExpand"/>
+            <!--Input notes-->
+            <Label Text="Enter notes of species"
+                   FontSize="22"
+                   VerticalOptions="EndAndExpand" 
+                   HorizontalOptions="StartAndExpand" />
+            <Editor x:Name="Notes"
+                    Placeholder="Notes"
+                    VerticalOptions="StartAndExpand" 
+                    HorizontalOptions="StartAndExpand"/>
+            <!--Input rarity-->
+            <Label Text="Select rarity of species"
+                   FontSize="16"
+                   VerticalOptions="EndAndExpand" 
+                   HorizontalOptions="StartAndExpand" />
+            <Grid VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Common"
+			            Grid.Row="0" Grid.Column="0"
+			            HorizontalOptions="Fill"
+			            VerticalOptions="EndAndExpand"
+			            Clicked="OnButtonCommonClicked"/>
+                <Button Text="Rare"
+			            Grid.Row="0" Grid.Column="1"
+			            HorizontalOptions="Fill"
+			            VerticalOptions="EndAndExpand"
+			            Clicked="OnButtonRareClicked"/>
+                <Button Text="Extremely Rare"
+			            Grid.Row="0" Grid.Column="2"
+			            HorizontalOptions="Fill"
+			            VerticalOptions="EndAndExpand"
+			            Clicked="OnButtonExtremelyRareClicked"/>
+            </Grid>
+            
+            <!--Save, cancel buttons grid-->
+            <Grid VerticalOptions="EndAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Save"
+			            Grid.Row="0" Grid.Column="0"
+			            HorizontalOptions="Fill"
+			            VerticalOptions="EndAndExpand"
+			            Clicked="OnButtonSaveClicked"/>
+                <Button Text="Cancel"
+			            Grid.Row="0" Grid.Column="1"
+			            HorizontalOptions="Fill"
+			            VerticalOptions="EndAndExpand"
+			            Clicked="OnButtonCancelClicked"/>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

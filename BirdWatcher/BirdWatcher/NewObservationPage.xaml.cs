@@ -13,37 +13,45 @@ namespace BirdWatcher
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class NewObservationPage : ContentPage
 	{
-		public NewObservationPage ()
+        // Temporary fields used to set Observation object values on Save
+        private string species = "";
+        private string notes = "";
+        private string rarity = "";
+
+        public NewObservationPage ()
 		{
 			InitializeComponent ();
 		}
 
-        // Methods called by button clicks from NewObservationPage view
-        async void OnButtonCommonClicked(object sender, EventArgs args)
+        // Set new Observation object's rarity from NewObservationPage view on click rarity button
+        void OnButtonCommonClicked(object sender, EventArgs args)
         {
-            // Add proper logic
-            await Navigation.PushAsync(new MainPage());
+            rarity = "Common";
         }
-        async void OnButtonRareClicked(object sender, EventArgs args)
+        void OnButtonRareClicked(object sender, EventArgs args)
         {
-            // Add proper logic
-            await Navigation.PushAsync(new MainPage());
+            rarity = "Rare";
         }
-        async void OnButtonExtremelyRareClicked(object sender, EventArgs args)
+        void OnButtonExtremelyRareClicked(object sender, EventArgs args)
         {
-            // Add proper logic
-            await Navigation.PushAsync(new MainPage());
+            rarity = "Extremely Rare";
         }
 
+        // Call to create, send new Observation object to MainPage method from NewObservationPage view on click save button
         async void OnButtonSaveClicked(object sender, EventArgs args)
         {
-            // Add proper logic
-            await Navigation.PushAsync(new MainPage());
+            species = Species.Text;
+            notes = Notes.Text;
+            Observation newObservation = new Observation(species, notes, rarity);
+            MainPage.AddObservationToList(newObservation);
+
+            await Navigation.PopAsync();
         }
+
+        // Call to return to MainPage view without creating, sending new Observation object 
         async void OnButtonCancelClicked(object sender, EventArgs args)
         {
-            // Add proper logic
-            await Navigation.PushAsync(new MainPage());
+            await Navigation.PopAsync();
         }
     }
 }

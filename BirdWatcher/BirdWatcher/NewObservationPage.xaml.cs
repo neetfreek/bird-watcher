@@ -42,10 +42,26 @@ namespace BirdWatcher
         {
             species = Species.Text;
             notes = Notes.Text;
-            Observation newObservation = new Observation(species, notes, rarity);
-            MainPage.AddObservationToList(newObservation);
+
+            SendObjectData();
+            NotifyObjectDataSent();
 
             await Navigation.PopAsync();
+        }
+
+
+        // Message Observation object data to subcribers in MainPage
+        void SendObjectData()
+        {
+            MessagingCenter.Send<NewObservationPage, string>(this, "Species", species);
+            MessagingCenter.Send<NewObservationPage, string>(this, "Notes", notes);
+            MessagingCenter.Send<NewObservationPage, string>(this, "Rarity", rarity);
+        }
+
+        // Message to MainPage that all Observation data sent
+        void NotifyObjectDataSent()
+        {
+            MessagingCenter.Send<NewObservationPage>(this, "DataSent");
         }
 
         // Call to return to MainPage view without creating, sending new Observation object 

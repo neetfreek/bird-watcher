@@ -16,5 +16,33 @@ namespace BirdWatcher
 		{
 			InitializeComponent ();
 		}
-	}
+
+        // Methods called by button clicks from NewObservationPage view
+        async void OnButtonCommonClicked(object sender, EventArgs args)
+        {
+            // Add proper logic
+            await Navigation.PushAsync(new MainPage());
+        }
+        async void OnButtonRareClicked(object sender, EventArgs args)
+        {
+            // Add proper logic
+            await Navigation.PushAsync(new MainPage());
+        }
+        async void OnButtonExtremelyRareClicked(object sender, EventArgs args)
+        {
+            // Add proper logic
+            await Navigation.PushAsync(new MainPage());
+        }
+
+        async void OnButtonSaveClicked(object sender, EventArgs args)
+        {
+            // Add proper logic
+            await Navigation.PushAsync(new MainPage());
+        }
+        async void OnButtonCancelClicked(object sender, EventArgs args)
+        {
+            // Add proper logic
+            await Navigation.PushAsync(new MainPage());
+        }
+    }
 }

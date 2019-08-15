@@ -17,6 +17,7 @@
                    HorizontalOptions="StartAndExpand" />
             <Editor x:Name="Species"
                     FontSize="26"
+                    AutoSize="TextChanges"
                     Placeholder="Enter text..."
                     VerticalOptions="StartAndExpand" 
                     HorizontalOptions="StartAndExpand"/>
@@ -28,6 +29,7 @@
                    HorizontalOptions="StartAndExpand" />
             <Editor x:Name="Notes"
                     FontSize="26"
+                    AutoSize="TextChanges"
                     Placeholder="Enter text..."
                     VerticalOptions="StartAndExpand" 
                     HorizontalOptions="StartAndExpand"/>

@@ -36,17 +36,19 @@ namespace BirdWatcher
         {
                 ObservationStackLayout.Children.Clear();
 
-            for (int counter = observations.Count - 1; counter > 0; counter--)
+            for (int counter = observations.Count - 1; counter > 0 - 1; counter--)
             {
                 Label labelSpecies = ObservationDataLabel($"Species: {observations[counter].Species}" , 26, FontAttributes.Bold);
                 Label labelRarity = ObservationDataLabel($"Rarity: {observations[counter].Rarity}", 22, FontAttributes.None);
                 Label labelNotes = ObservationDataLabel($"Notes: {observations[counter].Notes}", 22, FontAttributes.None);
+                Label labelTimestamp = ObservationDataLabel($"Timestamp: {observations[counter].Timestamp}", 18, FontAttributes.None);
 
                 Grid newObservationGrid = ObservationGrid();
 
                 newObservationGrid.Children.Add(labelSpecies, 0, 0);
                 newObservationGrid.Children.Add(labelRarity, 0, 1);
                 newObservationGrid.Children.Add(labelNotes, 0, 2);
+                newObservationGrid.Children.Add(labelTimestamp, 0, 3);
                 ObservationStackLayout.Children.Add(newObservationGrid);
             }
         }
@@ -70,9 +72,10 @@ namespace BirdWatcher
         private Grid ObservationGrid() // ADD FOURTH ROW FOR TIMESTAMP
         {
             Grid grid = new Grid();
-            RowDefinition rowSpecies = new RowDefinition() { Height = new GridLength(3.33, GridUnitType.Star) };
-            RowDefinition rowRarity = new RowDefinition() { Height = new GridLength(3.33, GridUnitType.Star) };
-            RowDefinition rowNotes = new RowDefinition() { Height = new GridLength(3.33, GridUnitType.Star) };
+            RowDefinition rowSpecies = new RowDefinition() { Height = new GridLength(2.5, GridUnitType.Star) };
+            RowDefinition rowRarity = new RowDefinition() { Height = new GridLength(2.5, GridUnitType.Star) };
+            RowDefinition rowNotes = new RowDefinition() { Height = new GridLength(2.5, GridUnitType.Star) };
+            RowDefinition rowTimestamp = new RowDefinition() { Height = new GridLength(2.5, GridUnitType.Star) };
             ColumnDefinition columnDetails = new ColumnDefinition() { Width = new GridLength(7.5, GridUnitType.Star) };
             ColumnDefinition columnImage = new ColumnDefinition() { Width = new GridLength(2.5, GridUnitType.Star) };
             Grid.SetRowSpan(columnImage, 2);

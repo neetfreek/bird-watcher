@@ -12,17 +12,42 @@
             HorizontalOptions="CenterAndExpand"
             VerticalOptions="Start"
         />
-        <Button Text="Add Observation"
+        
+        <!--Grid containing buttons-->
+        <Grid VerticalOptions="CenterAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Text="Add Observation"
             FontSize="30"
-		    Grid.Row="0" Grid.Column="0"
-			HorizontalOptions="Center"
-			VerticalOptions="Start"
+		    Grid.Row="0" Grid.Column="1"
+			HorizontalOptions="CenterAndExpand"
+			VerticalOptions="StartAndExpand"
             BackgroundColor="Wheat"
             BorderColor="DarkOliveGreen"
             BorderRadius="15"
             BorderWidth="2"
 			Clicked="OnButtonNewObservationClicked"
-        />
+            />
+            <Button Text="Sort"
+            FontSize="22"
+		    Grid.Row="0" Grid.Column="2"
+			HorizontalOptions="End"
+			VerticalOptions="StartAndExpand"
+            BackgroundColor="Wheat"
+            BorderColor="DarkOliveGreen"
+            BorderRadius="15"
+            BorderWidth="2"
+			Clicked="OnButtonSortClicked"
+            />
+        </Grid>        
+
         <ScrollView>
             <!--Contain labels generated from Preferences data-->
             <StackLayout x:Name="ObservationStackLayout">

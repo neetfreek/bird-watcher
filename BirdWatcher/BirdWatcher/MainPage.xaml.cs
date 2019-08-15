@@ -72,6 +72,19 @@ namespace BirdWatcher
             return label;
         }
 
+        // If note's length exceeds GlobalVariables.LENGTH_NOTE_EXCERPT characters, reduce to GlobalVariables.LENGTH_NOTE_EXCERPT characters, append "..."
+        private string ShortenNotes(string notes)
+        {
+            string notesToShorten = notes;
+            string notesShortened = notesToShorten;
+            if (notesToShorten.Length > GlobalVariables.LENGTH_NOTE_EXCERPT)
+            {
+                notesShortened = $"{notesToShorten.Substring(0, GlobalVariables.LENGTH_NOTE_EXCERPT)}...";
+            }
+
+            return notesShortened;
+        }
+
         // Create observation grid object to contain each observation, details
         private Grid ObservationGrid() // ADD FOURTH ROW FOR TIMESTAMP
         {

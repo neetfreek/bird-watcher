@@ -5,50 +5,16 @@
              x:Class="BirdWatcher.MainPage"
              Title ="Bird Watcher">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Bird Watcher!" 
-               FontSize="26"
-               HorizontalOptions="CenterAndExpand"
-               VerticalOptions="Start"               
-        />
-
+    <StackLayout>                
         <Label Text="Observation List" 
-               FontSize="22"
-               HorizontalOptions="CenterAndExpand"
-               VerticalOptions="Start"
-        />
-        
-        <!--Mockup of list of observations-->
-        <Label Text="Entry 1" 
-               FontSize="Large"
+               FontSize="32"
                HorizontalOptions="CenterAndExpand"
                VerticalOptions="Start"
         />
 
-        <Label Text="Entry 2" 
-               FontSize="Large"
-               HorizontalOptions="CenterAndExpand"
-               VerticalOptions="Start"
-        />
-
-        <Label Text="Entry 3" 
-               FontSize="Large"
-               HorizontalOptions="CenterAndExpand"
-               VerticalOptions="Start"
-        />
-
-        <Label Text="Entry 4" 
-               FontSize="Large"
-               HorizontalOptions="CenterAndExpand"
-               VerticalOptions="Start"
-        />
-
-        <Label Text="Entry 5" 
-               FontSize="Large"
-               HorizontalOptions="CenterAndExpand"
-               VerticalOptions="Start"
-        />
+        <!--Contain labels generated from Preferences data-->
+        <StackLayout x:Name="ObservationStackLayout">            
+        </StackLayout>
 
         <Button Text="Add Observation"
 			Grid.Row="0" Grid.Column="0"

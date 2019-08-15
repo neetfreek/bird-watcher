@@ -15,37 +15,68 @@ namespace BirdWatcher
         public MainPage()
         {
             InitializeComponent();
-            observations = ObservationSerialization.LoadObservationListFromPreferences();
             UpdateMainPageStackLayout();        
 
             // Setup message subscriber for notification all Observation object data sent
             MessagingCenter.Subscribe<NewObservationPage>(this, "DataSaved", (sender) =>
             {
-                observations = ObservationSerialization.LoadObservationListFromPreferences();
                 UpdateMainPageStackLayout();
             });
         }
 
+        // Re/create observations list organised newest to oldest top-down
         private void UpdateMainPageStackLayout()
         {
-            // REMOVE OR SKIP PRE-EXISTING LABELS IN MAINPAGESTACKLAYOUT
+            observations = ObservationSerialization.LoadObservationListFromPreferences();
             CreateObservationLabels();
         }
 
+        // Handle create observation child detail labels
         private void CreateObservationLabels()
         {
-            int counterStart = ObservationStackLayout.Children.Count;
+                ObservationStackLayout.Children.Clear();
 
-            for (int counter = counterStart; counter < observations.Count; counter++)
+            for (int counter = observations.Count - 1; counter > 0; counter--)
             {
-                Label label = new Label() {
-                    Text = observations[counter].Species,
-                    FontSize = 20,
-                    HorizontalOptions = LayoutOptions.CenterAndExpand,
-                    VerticalOptions = LayoutOptions.Start
-                };
-                ObservationStackLayout.Children.Add(label);
+                Label labelSpecies = ObservationDataLabel($"Species: {observations[counter].Species}" , 26, FontAttributes.Bold);
+                Label labelRarity = ObservationDataLabel($"Rarity: {observations[counter].Rarity}", 22, FontAttributes.None);
+                Label labelNotes = ObservationDataLabel($"Notes: {observations[counter].Notes}", 22, FontAttributes.None);
+
+                Grid newObservationGrid = ObservationGrid();
+
+                newObservationGrid.Children.Add(labelSpecies, 0, 0);
+                newObservationGrid.Children.Add(labelRarity, 0, 1);
+                newObservationGrid.Children.Add(labelNotes, 0, 2);
+                ObservationStackLayout.Children.Add(newObservationGrid);
             }
+        }
+
+        // Create boilerplate observation child detail label
+        private Label ObservationDataLabel(string text, int fontSize, FontAttributes fontAttributes)
+        {
+            Label label = new Label()
+            {
+                Text = text,
+                FontAttributes = fontAttributes,
+                FontSize = fontSize,
+                HorizontalOptions = LayoutOptions.StartAndExpand,
+                VerticalOptions = LayoutOptions.Start
+            };
+
+            return label;
+        }
+
+        // Create observation grid object to contain each observation, details
+        private Grid ObservationGrid() // ADD FOURTH ROW FOR TIMESTAMP
+        {
+            Grid grid = new Grid();
+            RowDefinition rowSpecies = new RowDefinition() { Height = new GridLength(3.33, GridUnitType.Star) };
+            RowDefinition rowRarity = new RowDefinition() { Height = new GridLength(3.33, GridUnitType.Star) };
+            RowDefinition rowNotes = new RowDefinition() { Height = new GridLength(3.33, GridUnitType.Star) };
+            ColumnDefinition columnDetails = new ColumnDefinition() { Width = new GridLength(7.5, GridUnitType.Star) };
+            ColumnDefinition columnImage = new ColumnDefinition() { Width = new GridLength(2.5, GridUnitType.Star) };
+            Grid.SetRowSpan(columnImage, 2);
+            return grid;
         }
 
         // Method called by button clicks from MainPage view

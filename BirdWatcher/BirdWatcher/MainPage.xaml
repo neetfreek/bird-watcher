@@ -48,7 +48,7 @@
             />
         </Grid>        
 
-        <ScrollView>
+        <ScrollView VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand">
             <!--Contain labels generated from Preferences data-->
             <StackLayout x:Name="ObservationStackLayout">
             </StackLayout>

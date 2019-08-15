@@ -5,31 +5,36 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Add Observation Information"
-                   FontSize="22"
+                   FontSize="36"
                    VerticalOptions="StartAndExpand" 
                    HorizontalOptions="CenterAndExpand" />
             
             <!--Input name-->
-            <Label Text="Enter name of species"
-                   FontSize="22"
+            <Label Text="Enter name of species:"
+                   FontSize="26"
+                   FontAttributes="Bold"
                    VerticalOptions="EndAndExpand" 
                    HorizontalOptions="StartAndExpand" />
             <Editor x:Name="Species"
-                    Placeholder="Species"
+                    FontSize="26"
+                    Placeholder="Enter text..."
                     VerticalOptions="StartAndExpand" 
                     HorizontalOptions="StartAndExpand"/>
             <!--Input notes-->
-            <Label Text="Enter notes of species"
-                   FontSize="22"
+            <Label Text="Enter notes of species:"
+                   FontSize="26"
+                    FontAttributes="Bold"                   
                    VerticalOptions="EndAndExpand" 
                    HorizontalOptions="StartAndExpand" />
             <Editor x:Name="Notes"
-                    Placeholder="Notes"
+                    FontSize="26"
+                    Placeholder="Enter text..."
                     VerticalOptions="StartAndExpand" 
                     HorizontalOptions="StartAndExpand"/>
             <!--Input rarity-->
-            <Label Text="Select rarity of species"
-                   FontSize="16"
+            <Label Text="Select rarity of species:"
+                   FontAttributes="Bold"                   
+                   FontSize="26"
                    VerticalOptions="EndAndExpand" 
                    HorizontalOptions="StartAndExpand" />
             <Grid VerticalOptions="CenterAndExpand">

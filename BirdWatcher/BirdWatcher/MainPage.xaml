@@ -15,7 +15,7 @@
             <Button Text="Add Observation"
 		        Grid.Row="0" Grid.Column="0"
 			    HorizontalOptions="Fill"
-			    VerticalOptions="EndAndExpand"
+			    VerticalOptions="Start"
 			    Clicked="OnButtonNewObservationClicked"
             />
             <ScrollView>

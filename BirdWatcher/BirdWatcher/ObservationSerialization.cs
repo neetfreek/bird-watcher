@@ -26,7 +26,7 @@ namespace BirdWatcher
             int counter = 0;
             while (Preferences.ContainsKey(counter.ToString()))
             {
-                Observation observationToAdd = PreferencesDataToObject(Preferences.Get(counter.ToString(), "NOT FOUND"));
+                Observation observationToAdd = PreferencesDataToObject(Preferences.Get(counter.ToString(), GlobalVariables.PREFERENCE_DATA_NOT_FOUND));
                 observations.Add(observationToAdd);
                 counter++;
             }
@@ -65,7 +65,7 @@ namespace BirdWatcher
         // Return Observation object with fields set from Preferences data
         private static Observation PreferencesDataToObject(string observationString)
         {
-            Observation observation = new Observation("template", "template", "template");
+            Observation observation = new Observation("", "", "");
             MemoryStream stream = new MemoryStream(Encoding.UTF8.GetBytes(observationString));
             DataContractJsonSerializer serializer = new DataContractJsonSerializer(observation.GetType());
 

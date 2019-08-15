@@ -24,15 +24,15 @@ namespace BirdWatcher
         // Set new Observation object's rarity from NewObservationPage view on click rarity button
         void OnButtonCommonClicked(object sender, EventArgs args)
         {
-            rarity = "Common";
+            rarity = GlobalVariables.RARITY_COMMON;
         }
         void OnButtonRareClicked(object sender, EventArgs args)
         {
-            rarity = "Rare";
+            rarity = GlobalVariables.RARITY_RARE;
         }
         void OnButtonExtremelyRareClicked(object sender, EventArgs args)
         {
-            rarity = "Extremely Rare";
+            rarity = GlobalVariables.RARITY_EXTREMELY_RARE;
         }
 
         // Handles saving new observation data to Preferences, notifies MainPage view when done via message
@@ -58,7 +58,7 @@ namespace BirdWatcher
         // Message MainPage that Observation data saved in Preferences
         void NotifyObjectDataSaved()
         {
-            MessagingCenter.Send<NewObservationPage>(this, "DataSaved");
+            MessagingCenter.Send<NewObservationPage>(this, GlobalVariables.MESSAGE_DATA_SAVED);
         }
 
         // Call to return to MainPage view without creating, sending new Observation object 

@@ -18,7 +18,7 @@ namespace BirdWatcher
             UpdateMainPageStackLayout();        
 
             // Setup message subscriber for notification all Observation object data sent
-            MessagingCenter.Subscribe<NewObservationPage>(this, "DataSaved", (sender) =>
+            MessagingCenter.Subscribe<NewObservationPage>(this, GlobalVariables.MESSAGE_DATA_SAVED, (sender) =>
             {
                 UpdateMainPageStackLayout();
             });
@@ -38,10 +38,14 @@ namespace BirdWatcher
 
             for (int counter = observations.Count - 1; counter > 0 - 1; counter--)
             {
-                Label labelSpecies = ObservationDataLabel($"Species: {observations[counter].Species}" , 26, FontAttributes.Bold);
-                Label labelRarity = ObservationDataLabel($"Rarity: {observations[counter].Rarity}", 22, FontAttributes.None);
-                Label labelNotes = ObservationDataLabel($"Notes: {observations[counter].Notes}", 22, FontAttributes.None);
-                Label labelTimestamp = ObservationDataLabel($"Timestamp: {observations[counter].Timestamp}", 18, FontAttributes.None);
+                Label labelSpecies = ObservationDataLabel(
+                    $"{GlobalVariables.LABEL_SPECIES} {observations[counter].Species}", GlobalVariables.SIZE_FONT_TEXT_LARGE, FontAttributes.Bold);
+                Label labelRarity = ObservationDataLabel(
+                    $"{GlobalVariables.LABEL_RARITY} {observations[counter].Rarity}", GlobalVariables.SIZE_FONT_TEXT, FontAttributes.None);
+                Label labelNotes = ObservationDataLabel(
+                    $"{GlobalVariables.LABEL_NOTES} {ShortenNotes(observations[counter].Notes)}", GlobalVariables.SIZE_FONT_TEXT, FontAttributes.None);
+                Label labelTimestamp = ObservationDataLabel(
+                    $"{GlobalVariables.LABEL_TIMESTAMP} {observations[counter].Timestamp}", GlobalVariables.SIZE_FONT_TEXT_SMALL, FontAttributes.None);
 
                 Grid newObservationGrid = ObservationGrid();
 

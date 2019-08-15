@@ -9,6 +9,8 @@ namespace BirdWatcher
 {
     public partial class MainPage : ContentPage
     {
+        private bool reverseSort = false;
+
         // Contain created observations
         private static List<Observation> observations = new List<Observation>();
 
@@ -24,10 +26,15 @@ namespace BirdWatcher
             });
         }
 
-        // Re/create observations list organised newest to oldest top-down
+        // Re/create observations list organised according to whether reverseSort true/false
         private void UpdateMainPageStackLayout()
         {
             observations = ObservationSerialization.LoadObservationListFromPreferences();
+            if (reverseSort)
+            {
+                observations.Reverse();
+            }
+
             CreateObservationLabels();
         }
 
@@ -104,10 +111,17 @@ namespace BirdWatcher
             return grid;
         }
 
-        // Method called by button clicks from MainPage view
+        // Handle New Observation button click
         async void OnButtonNewObservationClicked(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new NewObservationPage());
+        }
+
+        // Handle Sort button click 
+        void OnButtonSortClicked(object sender, EventArgs args)
+        {
+            reverseSort = !reverseSort;
+            UpdateMainPageStackLayout();
         }
     }
 }

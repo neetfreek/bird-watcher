@@ -34,7 +34,9 @@ namespace BirdWatcher
         // Handle create observation child detail labels
         private void CreateObservationLabels()
         {
-                ObservationStackLayout.Children.Clear();
+            ObservationStackLayout.Children.Clear();
+            BoxView seperatorFirst = new BoxView() { BackgroundColor = Color.DarkOliveGreen, HorizontalOptions = LayoutOptions.FillAndExpand, VerticalOptions = LayoutOptions.FillAndExpand };
+            ObservationStackLayout.Children.Add(seperatorFirst);
 
             for (int counter = observations.Count - 1; counter > 0 - 1; counter--)
             {
@@ -47,6 +49,8 @@ namespace BirdWatcher
                 Label labelTimestamp = ObservationDataLabel(
                     $"{GlobalVariables.LABEL_TIMESTAMP} {observations[counter].Timestamp}", GlobalVariables.SIZE_FONT_TEXT_SMALL, FontAttributes.None);
 
+                BoxView seperator = new BoxView() { BackgroundColor=Color.DarkOliveGreen, HorizontalOptions=LayoutOptions.FillAndExpand, VerticalOptions = LayoutOptions.FillAndExpand };
+
                 Grid newObservationGrid = ObservationGrid();
 
                 newObservationGrid.Children.Add(labelSpecies, 0, 0);
@@ -54,6 +58,7 @@ namespace BirdWatcher
                 newObservationGrid.Children.Add(labelNotes, 0, 2);
                 newObservationGrid.Children.Add(labelTimestamp, 0, 3);
                 ObservationStackLayout.Children.Add(newObservationGrid);
+                ObservationStackLayout.Children.Add(seperator);
             }
         }
 

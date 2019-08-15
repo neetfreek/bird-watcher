@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Xamarin.Essentials;
 
 namespace BirdWatcher
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class NewObservationPage : ContentPage
 	{
-        // Temporary fields used to set Observation object values on Save
+        // Temporary fields' values assigned via user input, used as fields for new Observation objects 
         private string species = "";
         private string notes = "";
         private string rarity = "";
@@ -37,31 +35,30 @@ namespace BirdWatcher
             rarity = "Extremely Rare";
         }
 
-        // Call to create, send new Observation object to MainPage method from NewObservationPage view on click save button
+        // Handles saving new observation data to Preferences, notifies MainPage view when done via message
         async void OnButtonSaveClicked(object sender, EventArgs args)
         {
             species = Species.Text;
             notes = Notes.Text;
 
-            SendObjectData();
-            NotifyObjectDataSent();
+            // Handle create Observation object, convert to JSON, save to Preferences
+            Observation newObservation = CreateObservationObject(species, notes, rarity);
+            ObservationSerialization.SaveObservationToPreferences(newObservation);
+
+            NotifyObjectDataSaved();
 
             await Navigation.PopAsync();
         }
 
-
-        // Message Observation object data to subcribers in MainPage
-        void SendObjectData()
+        Observation CreateObservationObject(string species, string notes, string rarity)
         {
-            MessagingCenter.Send<NewObservationPage, string>(this, "Species", species);
-            MessagingCenter.Send<NewObservationPage, string>(this, "Notes", notes);
-            MessagingCenter.Send<NewObservationPage, string>(this, "Rarity", rarity);
+            return new Observation(species, notes, rarity);
         }
 
-        // Message to MainPage that all Observation data sent
-        void NotifyObjectDataSent()
+        // Message MainPage that Observation data saved in Preferences
+        void NotifyObjectDataSaved()
         {
-            MessagingCenter.Send<NewObservationPage>(this, "DataSent");
+            MessagingCenter.Send<NewObservationPage>(this, "DataSaved");
         }
 
         // Call to return to MainPage view without creating, sending new Observation object 

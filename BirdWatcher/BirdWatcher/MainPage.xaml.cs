@@ -9,42 +9,21 @@ namespace BirdWatcher
 {
     public partial class MainPage : ContentPage
     {
-        // Temporary fields used to set Observation object values
-        private string species = "";
-        private string notes = "";
-        private string rarity = "";
-
-        public static List<Observation> Observations = new List<Observation>();
+        // Contain created observations
+        private static List<Observation> observations = new List<Observation>();
 
         public MainPage()
         {
             InitializeComponent();
-            // Setup message subscribers for new Observation object data fields
-            MessagingCenter.Subscribe<NewObservationPage, string>(this, "Species", (sender, arg) =>
-            {
-                species = arg;
-                Console.WriteLine($"set species {species}");
-            });
-            MessagingCenter.Subscribe<NewObservationPage, string>(this, "Notes", (sender, arg) =>
-            {
-                notes = arg;
-                Console.WriteLine($"set notes {notes}");            
-            });
-            MessagingCenter.Subscribe<NewObservationPage, string>(this, "Rarity", (sender, arg) =>
-            {
-                rarity = arg;
-                Console.WriteLine($"set rarity {rarity}");
-            });
+            observations = ObservationSerialization.LoadObservationListFromPreferences();
 
             // Setup message subscriber for notification all Observation object data sent
-            MessagingCenter.Subscribe<NewObservationPage>(this, "DataSent", (sender) =>
+            MessagingCenter.Subscribe<NewObservationPage>(this, "DataSaved", (sender) =>
             {
-                CreateNewObservation();
+                observations = ObservationSerialization.LoadObservationListFromPreferences();
             });
         }
 
-        // Create new Observation object from received data
-        private void CreateNewObservation()
         {
             Observation newObservation = new Observation(species, notes, rarity);
             Console.WriteLine($"CREATED new Observation object {newObservation.Species}");

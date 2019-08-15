@@ -14,7 +14,7 @@
         />
         
         <!--Grid containing buttons-->
-        <Grid VerticalOptions="CenterAndExpand">
+        <Grid VerticalOptions="StartAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>

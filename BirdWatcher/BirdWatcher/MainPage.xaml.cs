@@ -34,7 +34,9 @@ namespace BirdWatcher
 
         private void CreateObservationLabels()
         {
-            for (int counter = 0; counter < observations.Count; counter++)
+            int counterStart = ObservationStackLayout.Children.Count;
+
+            for (int counter = counterStart; counter < observations.Count; counter++)
             {
                 Label label = new Label() {
                     Text = observations[counter].Species,

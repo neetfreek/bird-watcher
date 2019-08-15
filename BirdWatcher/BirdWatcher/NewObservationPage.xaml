@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BirdWatcher.NewObservationPage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="Lavender">
             <Label Text="Add Observation Information"
                    FontSize="36"
                    VerticalOptions="StartAndExpand" 
@@ -53,16 +53,28 @@
 			            Grid.Row="0" Grid.Column="0"
 			            HorizontalOptions="Fill"
 			            VerticalOptions="EndAndExpand"
+                        BackgroundColor="Wheat"
+                        BorderColor="DarkOliveGreen"
+                        BorderRadius="15"
+                        BorderWidth="2"
 			            Clicked="OnButtonCommonClicked"/>
                 <Button Text="Rare"
 			            Grid.Row="0" Grid.Column="1"
 			            HorizontalOptions="Fill"
 			            VerticalOptions="EndAndExpand"
+                        BackgroundColor="Wheat"
+                        BorderColor="DarkOliveGreen"
+                        BorderRadius="15"
+                        BorderWidth="2"
 			            Clicked="OnButtonRareClicked"/>
                 <Button Text="Extremely Rare"
 			            Grid.Row="0" Grid.Column="2"
 			            HorizontalOptions="Fill"
 			            VerticalOptions="EndAndExpand"
+                        BackgroundColor="Wheat"
+                        BorderColor="DarkOliveGreen"
+                        BorderRadius="15"
+                        BorderWidth="2"
 			            Clicked="OnButtonExtremelyRareClicked"/>
             </Grid>
             
@@ -80,11 +92,19 @@
 			            Grid.Row="0" Grid.Column="0"
 			            HorizontalOptions="Fill"
 			            VerticalOptions="EndAndExpand"
+                        BackgroundColor="Wheat"
+                        BorderColor="DarkOliveGreen"
+                        BorderRadius="15"
+                        BorderWidth="2"
 			            Clicked="OnButtonSaveClicked"/>
                 <Button Text="Cancel"
 			            Grid.Row="0" Grid.Column="1"
 			            HorizontalOptions="Fill"
 			            VerticalOptions="EndAndExpand"
+                        BackgroundColor="Wheat"
+                        BorderColor="DarkOliveGreen"
+                        BorderRadius="15"
+                        BorderWidth="2"
 			            Clicked="OnButtonCancelClicked"/>
             </Grid>
         </StackLayout>

@@ -5,24 +5,28 @@
              x:Class="BirdWatcher.MainPage"
              Title ="Bird Watcher">
 
-        <StackLayout>
-            <Label Text="Observation List" 
-                FontSize="36"
-                FontAttributes="Bold"
-                HorizontalOptions="CenterAndExpand"
-                VerticalOptions="Start"
-            />
-            <Button Text="Add Observation"
-                FontSize="30"
-		        Grid.Row="0" Grid.Column="0"
-			    HorizontalOptions="Fill"
-			    VerticalOptions="Start"
-			    Clicked="OnButtonNewObservationClicked"
-            />
-            <ScrollView>
-                <!--Contain labels generated from Preferences data-->
-                <StackLayout x:Name="ObservationStackLayout">
-                </StackLayout>
-            </ScrollView>           
-        </StackLayout>
+    <StackLayout BackgroundColor="Lavender">
+        <Label Text="Observation List" 
+            FontSize="36"
+            FontAttributes="Bold"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Start"
+        />
+        <Button Text="Add Observation"
+            FontSize="30"
+		    Grid.Row="0" Grid.Column="0"
+			HorizontalOptions="Center"
+			VerticalOptions="Start"
+            BackgroundColor="Wheat"
+            BorderColor="DarkOliveGreen"
+            BorderRadius="15"
+            BorderWidth="2"
+			Clicked="OnButtonNewObservationClicked"
+        />
+        <ScrollView>
+            <!--Contain labels generated from Preferences data-->
+            <StackLayout x:Name="ObservationStackLayout">
+            </StackLayout>
+        </ScrollView>           
+    </StackLayout>
 </ContentPage>

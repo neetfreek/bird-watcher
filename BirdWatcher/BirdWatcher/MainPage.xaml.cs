@@ -12,6 +12,9 @@ namespace BirdWatcher
 {
     public partial class MainPage : ContentPage
     {
+        // Toggle whether to sort observations from newest to oldest, or oldest to newest
+        private bool reverseSort = false;
+
         public MainPage()
         {
             InitializeComponent();
@@ -23,10 +26,6 @@ namespace BirdWatcher
                 UpdateMainPageStackLayout();
             });
         }
-
-
-        // Toggle whether to sort observations from newest to oldest, or oldest to newest
-        private bool reverseSort = false;
 
         // Contain created observations
         private static List<Observation> observations = new List<Observation>();

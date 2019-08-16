@@ -1,8 +1,8 @@
 # Bird Watcher
  A native mobile application for adding birdwatching observations for Android devices. Build with Xamarin.Forms, a cross-platform UI toolkit for .NET native application development using C# and Visual Studio.  
 
-<img src="/PreviewImages/MainPageView.png" alt="The main page view" align="left" width="210">
-<img src="/PreviewImages/NewObservationView.png" alt="Adding a new observation" align="right" width="210">
+<img src="/PreviewImages/MainPageView.png" alt="The main page view" align="left" width="410">
+<img src="/PreviewImages/NewObservationView.png" alt="Adding a new observation" align="right" width="410">
  
 ## Description
  The application's **Main Page** view shows the user the following:  

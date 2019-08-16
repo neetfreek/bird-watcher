@@ -1,8 +1,17 @@
 # Bird Watcher
  A native mobile application for adding birdwatching observations for Android devices. Build with Xamarin.Forms, a cross-platform UI toolkit for .NET native application development using C# and Visual Studio.  
+ The APK file is included in the root directory of this repository.
 
 <img src="/PreviewImages/MainPageView.png" alt="The main page view" align="left" width="410">
 <img src="/PreviewImages/NewObservationView.png" alt="Adding a new observation" align="right" width="410">
+ 
+## Table of Contents
+ - [**Description**](https://github.com/neetfreek/bird-watcher#description)
+ - [**Using the Application**](https://github.com/neetfreek/bird-watcher#using-the-application)
+ - [**Requirements For Development and Testing**](https://github.com/neetfreek/bird-watcher#requirements-for-development-and-testing)
+ - [**Building and Testing the Application**](https://github.com/neetfreek/bird-watcher#building-and-testing-the-application)
+ - [**Further Development**](https://github.com/neetfreek/bird-watcher#further-development)
+ - [**Acknowledgements**](https://github.com/neetfreek/bird-watcher#acknowledgements)
  
 ## Description
  The application's **Main Page** view shows the user the following:  
@@ -38,6 +47,9 @@
  
 ## Building and Testing the Application
  Open the BirdWatcher solution (.sln) file in the root directory of this repository.  
+ Note that for this application the **Linker** has been configured for Sdk builds to reduce the file size of the APK. This can be change by going to the `BirdWatcher.Android` properties -> Android Options tab and selecting a different Linker option.  
+ Note also that **ProGuard** has been enabled to link and obfuscate Java code, and remove unused Java bytecode. Proguard can be disabled by changing the solution configuration to Debug or going to the `BirdWatcher.Android` properties -> Android Options and un-checking the *Enable ProGuard* checkbox.  
+ Finally, note that **debugging has not been disabled** so as to allow for anyone reviewing this code to easily debug the application. **Debugging must be disabled for released applications to prevent access to the Java code and execution of arbitrary code.**
 
 ### Building the Application
  Select Build -> Build Solution. If already built, you can select Build -> Rebuild Solution (removes previous build artefacts before building).  
@@ -62,7 +74,7 @@
  4. The application will launch automatically.  
  
 #### Devices
- 1. Enable Debugging on the device by checking the USB Debugging checkbox in the Developer Options menu.  
+ 1. Enable Debugging on the device by checking the *USB Debugging* checkbox in the Developer Options menu.  
  2. Run the **android.bat** application in the **android-sdk** folder. 
  3. Download USB drivers. Galaxy Nexus device drivers are downloaded from [Samsung](https://www.samsung.com/us/support/downloads/) and other device drivers from [Android Developers](https://developer.android.com/studio/run/oem-usb#Drivers)
  4. Install the USB driver on the device.  

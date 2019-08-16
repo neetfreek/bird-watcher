@@ -1,8 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/**************************************************************************
+* Contains NewObservationPage view functionality                          *
+* 1. Handles creating, populating Observation grid control objects and    *
+*       their sorting order in the ObservationStackLayout control object. *
+* 2. Handles New Observation and Sort button click functionality.         *
+***************************************************************************/
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

@@ -1,4 +1,7 @@
-﻿namespace BirdWatcher
+﻿/**************************************************************************
+* Contains commonly-used CONST variables used throughout the application  *
+***************************************************************************/
+namespace BirdWatcher
 {
     class GlobalVariables
     {

@@ -1,8 +1,14 @@
-﻿using System;
+﻿/**************************************************************************
+* Handles Observation data saving and loading                             *
+* 1. Saves observation data as JSON strings in the device's Preferences   *
+*       dictionary, with int key and JSON string as value, by converting  *
+*       Observation objects into JSON string values.                      *
+* 2. Loads observation data from devices Preferences dictionary, by       *
+*       converting JSON string values to Observation objects, adding them *
+*       to a list and returning the list to caller                        *
+***************************************************************************/
 using System.Collections.Generic;
 using System.Text;
-
-// For object serialization and saving data
 using System.IO;
 using System.Runtime.Serialization.Json;
 using Xamarin.Essentials;

@@ -1,7 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿/**************************************************************************
+* Represents Observation objects                                          *
+* 1. Contains Observation details as properties, assigned to via          *
+*       constructor when objects created.                                 *
+***************************************************************************/
+using System;
 using System.Runtime.Serialization;
-using System.Text;
 
 namespace BirdWatcher
 {

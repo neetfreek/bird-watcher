@@ -1,15 +1,24 @@
 # Bird Watcher
  A native mobile application for adding birdwatching observations for Android devices. Build with Xamarin.Forms, a cross-platform UI toolkit for .NET native application development using C# and Visual Studio.  
+
+<img src="/PreviewImages/MainPageView.png" alt="The main page view" align="left" width="410">
+<img src="/PreviewImages/NewObservationView.png" alt="Adding a new observation" align="right" width="410">
  
 ## Description
  The application's **Main Page** view shows the user the following:  
  - A button to add new birdwatching observations  
- - A button to resort recorded observations, either from newest to oldest, or oldest to newest  
+ - A button to re-sort recorded observations, either from newest to oldest, or oldest to newest  
  - A scrolling list of recorded observations. Each observation contains the following information:  
 	- The name of the species  
 	- The rarity of the species  
 	- An excerpt of the users notes on the species  
 	- The date and time at which the observation was made   
+	
+ The application's **New Observation Page** view shows the user the following:  
+ - A field for entering the name of the observed species  
+ - A field for entering notes about the observation  
+ - Three buttons for selecting the rarity of the observation; common, rare, extremely rare
+ - Buttons to save the observation or cancel recording the observation.
 
 ## Using the Application
  - Users press the *Add Observation* button to record a new observation  

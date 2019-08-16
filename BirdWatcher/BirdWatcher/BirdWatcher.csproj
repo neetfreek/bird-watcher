@@ -3,6 +3,10 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
 	<AppxBundlePlatforms>neutral</AppxBundlePlatforms>
+	<Description>A native mobile application for adding birdwatching observations for Android devices. Build with Xamarin.Forms, a cross-platform UI toolkit for .NET native application development using C# and Visual Studio.</Description>
+	<PackageLicenseUrl>https://github.com/neetfreek/bird-watcher/blob/master/LICENSE</PackageLicenseUrl>
+	<PackageProjectUrl>https://github.com/neetfreek/bird-watcher</PackageProjectUrl>
+	<PackageTags />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

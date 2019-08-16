@@ -38,7 +38,7 @@ namespace BirdWatcher
         }
 
         // Handles saving new observation data to Preferences, notifies MainPage view when done via message
-        async void OnButtonSaveClicked(object sender, EventArgs args)
+        private async void OnButtonSaveClickedAsync(object sender, EventArgs args)
         {
             species = Species.Text;
             notes = Notes.Text;
@@ -64,7 +64,7 @@ namespace BirdWatcher
         }
 
         // Call to return to MainPage view without creating, sending new Observation object 
-        async void OnButtonCancelClicked(object sender, EventArgs args)
+        private async void OnButtonCancelClickedAsync(object sender, EventArgs args)
         {
             await Navigation.PopAsync();
         }

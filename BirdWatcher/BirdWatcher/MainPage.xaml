@@ -33,7 +33,7 @@
             BorderColor="DarkOliveGreen"
             BorderRadius="15"
             BorderWidth="2"
-			Clicked="OnButtonNewObservationClicked"
+			Clicked="OnButtonNewObservationClickedAsync"
             />
             <Button Text="Sort"
             FontSize="22"

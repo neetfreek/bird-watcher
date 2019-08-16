@@ -117,7 +117,7 @@ namespace BirdWatcher
         }
 
         // Handle New Observation button click
-        async void OnButtonNewObservationClicked(object sender, EventArgs args)
+        async void OnButtonNewObservationClickedAsync(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new NewObservationPage());
         }

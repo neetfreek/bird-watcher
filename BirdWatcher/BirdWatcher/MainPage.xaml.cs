@@ -42,8 +42,12 @@ namespace BirdWatcher
         private void CreateObservationLabels()
         {
             ObservationStackLayout.Children.Clear();
-            BoxView seperatorFirst = new BoxView() { BackgroundColor = Color.DarkOliveGreen, HorizontalOptions = LayoutOptions.FillAndExpand, VerticalOptions = LayoutOptions.FillAndExpand };
-            ObservationStackLayout.Children.Add(seperatorFirst);
+
+            if (observations.Count > 0)
+            {
+                BoxView seperatorFirst = new BoxView() { BackgroundColor = Color.DarkOliveGreen, HorizontalOptions = LayoutOptions.FillAndExpand, VerticalOptions = LayoutOptions.FillAndExpand };
+                ObservationStackLayout.Children.Add(seperatorFirst);
+            }
 
             for (int counter = observations.Count - 1; counter > 0 - 1; counter--)
             {
@@ -98,7 +102,7 @@ namespace BirdWatcher
         }
 
         // Create observation grid object to contain each observation, details
-        private Grid ObservationGrid() // ADD FOURTH ROW FOR TIMESTAMP
+        private Grid ObservationGrid()
         {
             Grid grid = new Grid();
             RowDefinition rowSpecies = new RowDefinition() { Height = new GridLength(2.5, GridUnitType.Star) };
@@ -106,8 +110,6 @@ namespace BirdWatcher
             RowDefinition rowNotes = new RowDefinition() { Height = new GridLength(2.5, GridUnitType.Star) };
             RowDefinition rowTimestamp = new RowDefinition() { Height = new GridLength(2.5, GridUnitType.Star) };
             ColumnDefinition columnDetails = new ColumnDefinition() { Width = new GridLength(7.5, GridUnitType.Star) };
-            ColumnDefinition columnImage = new ColumnDefinition() { Width = new GridLength(2.5, GridUnitType.Star) };
-            Grid.SetRowSpan(columnImage, 2);
             return grid;
         }
 

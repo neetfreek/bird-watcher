@@ -3,7 +3,7 @@
 ***************************************************************************/
 namespace BirdWatcher
 {
-    class GlobalVariables
+    public class GlobalVariables
     {
         // Internal sizes
         public const int LENGTH_NOTE_EXCERPT = 60;

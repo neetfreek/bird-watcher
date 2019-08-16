@@ -91,7 +91,7 @@ namespace BirdWatcher
             return label;
         }
 
-        // If note's length exceeds GlobalVariables.LENGTH_NOTE_EXCERPT characters, reduce to GlobalVariables.LENGTH_NOTE_EXCERPT characters, append "..."
+        // If note's length exceeds GlobalVariables.LENGTH_NOTE_EXCERPT characters, reduce to limit and append "..."
         private string ShortenNotes(string notes)
         {
             string notesToShorten = notes;

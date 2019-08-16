@@ -13,7 +13,7 @@ namespace BirdWatcher
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class NewObservationPage : ContentPage
 	{
-        // Temporary fields' values assigned via user input, used as fields for new Observation objects 
+        // Temporary fields' values assigned via user input, assigned to new Observation objects on construction
         private string species = "";
         private string notes = "";
         private string rarity = "";
@@ -37,7 +37,8 @@ namespace BirdWatcher
             rarity = GlobalVariables.RARITY_EXTREMELY_RARE;
         }
 
-        // Handles saving new observation data to Preferences, notifies MainPage view when done via message
+
+        // Handle save new Observation object data to Preferences, notify MainPage view when done via message
         private async void OnButtonSaveClickedAsync(object sender, EventArgs args)
         {
             species = Species.Text;
@@ -52,6 +53,7 @@ namespace BirdWatcher
             await Navigation.PopAsync();
         }
 
+        // Create, return new Observation object with Properties assigned argument values on construction
         private Observation CreateObservationObject(string species, string notes, string rarity)
         {
             return new Observation(species, notes, rarity);

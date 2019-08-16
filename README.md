@@ -18,7 +18,7 @@
  - A field for entering the name of the observed species  
  - A field for entering notes about the observation  
  - Three buttons for selecting the rarity of the observation; common, rare, extremely rare
- - Buttons to save the observation or cancel recording the observation.
+ - Buttons to save the observation or cancel recording the observation  
 
 ## Using the Application
  - Users press the *Add Observation* button to record a new observation  
@@ -27,8 +27,8 @@
 	- Notes on the species by using an input field  
 	- The rarity of the species by selecting the appropriate button  
  - Users can either press the *Save* or *Cancel* buttons:  
-	- Saving automatically appends the time and date the observation was made to the observation notes, saves the observation as persistent data to their device, and returns the user to the **Main Page** view, where their newly recorded observation can be seen.  
-	- Cancelling discards any entered information and returns the user to the **Main Page** view.  
+	- Saving automatically appends the time and date (formatted according to the device's language) the observation was made to the observation notes, saves the observation as persistent data to their device, and returns the user to the **Main Page** view, where their newly recorded observation can be seen.  
+	- Cancelling discards any entered information and returns the user to the **Main Page** view  
 
 ## Requirements For Development and Testing
  1. *Java Deveelopment Kit*, or *JDK*; version 8 for Android API Levels 24 and more, and 7 for 23 and less. It is recommended to install *JDK 8*.  
@@ -73,7 +73,7 @@
 
 ### Geolocation
  Geolocation functionality like adding location coordinates or a pinned image of the location of observations on a map image can be implemented via the Xamarin.Essentials library using the Geolocation feature. This library is already installed. This functionality requires:    
- 1. Adding location access permission requesting in the `AssemblyInfo.cs` file or the `AndroidManifest.xml file`.  
+ 1. Adding location access permission requesting in the `AssemblyInfo.cs` file or the `AndroidManifest.xml` file.  
  2. Referencing the Xamarin.Essentials library via a using statement at the top of the class implementing Geolocation functionality.  
  
 ### Pictures
@@ -83,7 +83,10 @@
  3. Add some lines of code to the `Activity.cs's onCreate` to enable Android Current Activity functionality.
  4. Add some lines of code to the `AndroidManifest.xml` file to adhere to strict mode.
  5. Create/ Add to `xml` folder in `Resources` folder `file_paths.xml` with some code in it.
- 6. Please refer to *Android Current Activity Setup* and *Android Misc Setup* in the [plugin's project page](https://github.com/jamesmontemagno/MediaPlugin)
+ 6. Please refer to *Android Current Activity Setup* and *Android Misc Setup* in the [plugin's project page.](https://github.com/jamesmontemagno/MediaPlugin)
+
+### Cross-Platform Development
+ Xamarin.Forms allows for fairly easy cross-platform development for Android, iOS, and UWP devices. This is most easily done thought creating Shared Projects / Shared Asset Projects which uses file-linking and allows for including platform-specific code. Code is compiled into each referencing project. This project has all development files within the platform-agnostic BirdWatcher directory, can be ported into a new Shared Project, and so is compatible with this approach. 
 
 ## Acknowledgements
  Application icon from DawnLike Tileset v1.81 by DawnBringer and DragonDePlatino, CC-BY 4.0 license.  

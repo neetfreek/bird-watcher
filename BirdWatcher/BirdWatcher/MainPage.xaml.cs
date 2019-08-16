@@ -12,15 +12,10 @@ namespace BirdWatcher
 {
     public partial class MainPage : ContentPage
     {
-        private bool reverseSort = false;
-
-        // Contain created observations
-        private static List<Observation> observations = new List<Observation>();
-
         public MainPage()
         {
             InitializeComponent();
-            UpdateMainPageStackLayout();        
+            UpdateMainPageStackLayout();
 
             // Setup message subscriber for notification all Observation object data sent
             MessagingCenter.Subscribe<NewObservationPage>(this, GlobalVariables.MESSAGE_DATA_SAVED, (sender) =>
@@ -28,6 +23,13 @@ namespace BirdWatcher
                 UpdateMainPageStackLayout();
             });
         }
+
+
+        // Toggle whether to sort observations from newest to oldest, or oldest to newest
+        private bool reverseSort = false;
+
+        // Contain created observations
+        private static List<Observation> observations = new List<Observation>();
 
         // Re/create observations list organised according to whether reverseSort true/false
         private void UpdateMainPageStackLayout()

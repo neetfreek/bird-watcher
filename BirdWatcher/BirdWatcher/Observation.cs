@@ -20,6 +20,7 @@ namespace BirdWatcher
         [DataMember]
         public readonly string Timestamp = "";
 
+
         public Observation(string species, string notes, string rarity)
         {
             Species = species;

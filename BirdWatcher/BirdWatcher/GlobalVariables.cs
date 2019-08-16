@@ -14,8 +14,6 @@ namespace BirdWatcher
         public const int SIZE_FONT_TEXT = 22;
         public const int SIZE_FONT_TEXT_SMALL = 18;
 
-
-
         // User-facing text
         public const string LABEL_SPECIES = "Species:";
         public const string LABEL_RARITY = "Rarity:";

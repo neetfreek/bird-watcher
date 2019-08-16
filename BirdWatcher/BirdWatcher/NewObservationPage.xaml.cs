@@ -18,10 +18,12 @@ namespace BirdWatcher
         private string notes = "";
         private string rarity = "";
 
+
         public NewObservationPage ()
 		{
 			InitializeComponent ();
 		}
+
 
         // Set new Observation object's rarity from NewObservationPage view on click rarity button
         private void OnButtonCommonClickedAsync(object sender, EventArgs args)
@@ -64,6 +66,7 @@ namespace BirdWatcher
         {
             MessagingCenter.Send<NewObservationPage>(this, GlobalVariables.MESSAGE_DATA_SAVED);
         }
+
 
         // Call to return to MainPage view without creating, sending new Observation object 
         private async void OnButtonCancelClickedAsync(object sender, EventArgs args)

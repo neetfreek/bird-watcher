@@ -1,4 +1,7 @@
 # Bird Watcher
+
+**I am re-implementing this project using a tabbed-page layout. It will be slicker, more stable - and smaller in size. I'll also add some much-needed form validation.**
+
  A native mobile application for adding birdwatching observations for Android devices. Build with Xamarin.Forms, a cross-platform UI toolkit for .NET native application development using C# and Visual Studio.  
  The APK file is included in the root directory of this repository.
 
